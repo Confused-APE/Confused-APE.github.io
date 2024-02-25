@@ -3,6 +3,24 @@
 icon: fas fa-info-circle
 order: 4
 ---
+## Profile
+Venus Chhantel
 
-> Add Markdown syntax content to file `_tabs/about.md`{: .filepath } and it will show up on this page.
-{: .prompt-tip }
+## Work Experiences
+
+|Organization| Designation | Time |
+|--|--|--|
+| Vairav Technology | Endpoint Protection Testing | May 2022 - June 2022 |
+| Cryptogen Nepal | SOC Analyst | Sept 2022 - Present |
+
+## Certifications
+
+|Certifications| Issued on  | Validate |
+|--|--|--|
+| PJMR (Practical Junior Malware Researcher) | Nov 4, 2023 | [Click Here](https://www.credential.net/972263eb-7fde-4acd-93ab-568e38077b55#gs.1999s6) |
+
+## Education
+
+| Programme  | Institution | Achievement | Time |
+|--|--|--|--|
+| BSc (Hons) Computer Networking & IT Security | Islington College | First Class Honor | March 2021 - Dec 2023 |
