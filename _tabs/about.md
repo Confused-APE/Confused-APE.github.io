@@ -6,9 +6,9 @@ order: 4
 
 ## whoami
 
-Venus Chhantel
+### Venus Chhantel
 
-A continuous learner committed to staying ahead of evolving threats. Representing a T-shaped skill set, my knowledge spans various cybersecurity domains, but I bring deep expertise in analyzing malware threats.
+A continuous learner and researcher committed to staying ahead of evolving threats. Representing a T-shaped skill set, my knowledge spans various cybersecurity domains, but I bring expertise in analyzing malware threats.
 
 ## Work Experiences
 
