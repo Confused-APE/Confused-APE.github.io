@@ -3,8 +3,12 @@
 icon: fas fa-info-circle
 order: 4
 ---
-## Profile
+
+## whoami
+
 Venus Chhantel
+
+A continuous learner committed to staying ahead of evolving threats. Representing a T-shaped skill set, my knowledge spans various cybersecurity domains, but I bring deep expertise in analyzing malware threats.
 
 ## Work Experiences
 
