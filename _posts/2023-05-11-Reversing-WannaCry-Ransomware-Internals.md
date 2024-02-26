@@ -22,7 +22,7 @@ tags: [WannaCry, Ransomware, Reverse Engineering, YARA]
 
 ## Ransom Note
 
-**WannaCry** drops a ransom note named *\*@Please_Read_Me@.txt** in every folder that it encrypts. 
+**WannaCry** drops a ransom note named \*@Please_Read_Me@.txt* in every folder that it encrypts. 
 
     Q:  What's wrong with my files?
     
