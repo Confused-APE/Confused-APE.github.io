@@ -18,8 +18,6 @@ tags: [WannaCry, Ransomware, Reverse Engineering, YARA]
 
 **SHA256:** 24d004a104d4d54034dbcffc2a4b19a11f39008a575aa614ea04703480b1022c
 
-![VirusTotal Result](/images/2023-11-11-Reversing-WannaCry-Ransomware/1.png)
-
 <br>
 
 ## Ransom Note
