@@ -1,7 +1,7 @@
 ---
 layout:	post
 title:  "Reversing WannaCry Ransomware Internals"
-date:   2023-08-11 11:11:11 +0200
+date:   2023-11-11 11:11:11 +0200
 categories: [Malware Analysis]
 tags: [WannaCry, Ransomware, Reverse Engineering, YARA]
 ---
