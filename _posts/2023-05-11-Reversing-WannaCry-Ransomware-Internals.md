@@ -6,8 +6,7 @@ categories: [Malware Analysis]
 tags: [WannaCry, Ransomware, Reverse Engineering, YARA]
 ---
 
-## Overview
-
+## Overview:
 
 
 <br>
@@ -18,9 +17,16 @@ tags: [WannaCry, Ransomware, Reverse Engineering, YARA]
 
 **SHA256:** 24d004a104d4d54034dbcffc2a4b19a11f39008a575aa614ea04703480b1022c
 
+![VirusTotal Result](/images/2023-11-11-Reversing-WannaCry-Ransomware/1.png)
+
 <br>
 
-## Ransom Note
+## WannaCry Attack Flow:
+
+
+<br>
+
+## Ransom Note:
 
 **WannaCry** drops a ransom note named *@Please_Read_Me@.txt in every folder that it encrypts. 
 
@@ -47,14 +53,14 @@ tags: [WannaCry, Ransomware, Reverse Engineering, YARA]
  
 <br>
 
-## Reversing 
+## Reversing WannaCry: 
 
-### First Stager
-
-
-
-### Second Stager
+### First Stager:
 
 
-### Final Stager
+
+### Second Stager:
+
+
+### Final Stager:
 
