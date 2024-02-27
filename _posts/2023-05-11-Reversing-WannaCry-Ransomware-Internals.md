@@ -8,6 +8,9 @@ tags: [WannaCry, Ransomware, Reverse Engineering, YARA]
 
 ## Overview
 
+In my early days into malware analysis, I had analyzed WannaCry ransomware but without delving into reverse engineering due to my limited proficiency in that area. But now with couple of months into malware analysis amd armed with new found expertise in reverse engineering, I decided to reverse the WannaCry ransomware to gain deeper understanding of its internals.
+
+WannaCry ransomware (also known as WCry, WannaCrypt or WannaCrypt0r) appeared on May 12, 2017 and quickly propagate over the internet with its worm feature by  exploiting vulnerability in Microsoft SMB (MS17-010).
 
 <br>
 
@@ -21,7 +24,7 @@ tags: [WannaCry, Ransomware, Reverse Engineering, YARA]
 
 <br>
 
-## WannaCry Attack Flow
+## WannaCry Ransomware Execution Flow
 
 
 <br>
@@ -53,7 +56,7 @@ tags: [WannaCry, Ransomware, Reverse Engineering, YARA]
  
 <br>
 
-## Reversing WannaCry 
+## Reversing WannaCry Ransomware
 
 ### First Stager
 
