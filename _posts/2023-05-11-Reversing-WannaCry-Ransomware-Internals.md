@@ -2,7 +2,7 @@
 layout:	post
 title:  "Reversing WannaCry Ransomware Internals"
 date:   2023-05-11 11:11:11 +0200
-categories: [Malware Analysis]
+categories: [Reversing Malware Internals]
 tags: [WannaCry, Ransomware, Reverse Engineering, YARA]
 ---
 
@@ -67,3 +67,14 @@ WannaCry ransomware (also known as WCry, WannaCrypt or WannaCrypt0r) appeared on
 
 ### Final Stager
 
+<br>
+
+## MITRE ATT&CK
+
+
+<br>
+
+## YARA Rule
+
+
+<br>
