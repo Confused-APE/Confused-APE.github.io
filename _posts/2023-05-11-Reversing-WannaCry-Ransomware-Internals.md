@@ -58,18 +58,33 @@ WannaCry ransomware (also known as WCry, WannaCrypt or WannaCrypt0r) appeared on
 
 ## Reversing WannaCry Ransomware
 
-### First Stager
+### Loader (mssecsvc.exe)
 
 
 
-### Second Stager
+### Second Stager (tasksche.exe)
 
 
-### Final Stager
+### Final Payload (kbdlv.dll)
+
+
 
 <br>
 
 ## MITRE ATT&CK
+
+|  Tactics|Techniques  |
+|--|--|
+| Initial Access | T0866 Exploitation of Remote Services |
+| Persistence | T1543.003 Create or Modify System Process:  Windows Service |
+| Defense Evasion | T1222.001 File and Directory Permissions Modification:  Windows File and Directory Permissions Modification |
+|  | T1564.001 Hide Artifacts:  Hidden Files and Directories |
+| Discovery | T1018 Remote System Discovery |
+|  | T1120 Peripheral Device Discovery |
+|  | T1016 System Network Configuration Discovery |
+| Lateral Movement | T1210 Exploitation of Remote Services |
+| Command and Control | T1573.002 Encrypted Channel:  Asymmetric Cryptography |
+| Impact | T1486 Data Encrypted for Impact |
 
 
 <br>
