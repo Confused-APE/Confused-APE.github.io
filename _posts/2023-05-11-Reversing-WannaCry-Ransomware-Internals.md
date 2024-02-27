@@ -79,13 +79,15 @@ WannaCry ransomware (also known as WCry, WannaCrypt or WannaCrypt0r) appeared on
 | Persistence | T1543.003 Create or Modify System Process:  Windows Service |
 | Defense Evasion | T1222.001 File and Directory Permissions Modification:  Windows File and Directory Permissions Modification |
 |  | T1564.001 Hide Artifacts:  Hidden Files and Directories |
+|  | T1036.005 Masquerading: Match Legitimate Name or Location |
 | Discovery | T1018 Remote System Discovery |
 |  | T1120 Peripheral Device Discovery |
 |  | T1016 System Network Configuration Discovery |
 | Lateral Movement | T1210 Exploitation of Remote Services |
 | Command and Control | T1573.002 Encrypted Channel:  Asymmetric Cryptography |
+|  | T1090.003 Proxy: Multi-hop Proxy |
 | Impact | T1486 Data Encrypted for Impact |
-
+|  | T1490 Inhibit System Recovery |
 
 <br>
 
