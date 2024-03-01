@@ -133,6 +133,8 @@ Under the sub_507F20, there is call to 2 functions, sub_407C40 and sub_407CE0 as
 
 Lets now dive into sub_407C40.
 
+![Create Service](/images/2023-11-11-Reversing-WannaCry-Ransomware/8.png)
+
 
 ### Second Stager (tasksche.exe)
 
