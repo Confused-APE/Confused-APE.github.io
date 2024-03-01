@@ -66,7 +66,7 @@ Lets dive straight into reversing WannaCry by loading in IDA. The IDA point out 
 
 ![Main Function](/images/2023-11-11-Reversing-WannaCry-Ransomware/3.png)
 
-First, some variables can be seen initialized.
+Under the main function, first some variables can be seen initialized.
 
 Then sub esp, 50 instruction is allocating space in stack for arguments and values.
 
