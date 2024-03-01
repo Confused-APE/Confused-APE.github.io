@@ -60,6 +60,78 @@ WannaCry ransomware (also known as WCry, WannaCrypt or WannaCrypt0r) appeared on
 
 ### Loader (mssecsvc.exe)
 
+Lets dive straight into reversing WannaCry by loading in IDA. The IDA point out the main function of this program so lets start reversing from there. 
+
+#### Kill Switch
+
+![Main Function](/images/2023-11-11-Reversing-WannaCry-Ransomware/3.png)
+
+First, some variables can be seen initialized.
+
+Then sub esp, 50 instruction is allocating space in stack for arguments and values.
+
+After that there are couple of instructions for preparing rep movsd, which will move double word (32-bits) value from esi to edi till the ecx is 0.
+
+- The esi and ebi are pushed onto the stack to save their value.
+- The value 0xE (14) is moved to ecx as counter.
+- The offset of a kill switch URL somewhere under .data section is moved to esi.
+- With lea instruction, the beginning offset under stack segment where the kill switch URL is to be stored is moved to edi.
+- There is xor eax, eax which will result to eax being 0.
+- Finally the rep movsd instruction will move 32-bits (4 bytes) of kill switch URL from esi to edi each time till ecx is 0 (14 times).
+
+![KillSwitch URL](/images/2023-11-11-Reversing-WannaCry-Ransomware/4.png)
+
+Following it, there is movsb which will move just a byte from esi to edi.
+
+Then there are couple of mov instructions where eax value (0) is moved to stack, which offset are just after the end of kill switch URL.
+
+![Check KillSwitch](/images/2023-11-11-Reversing-WannaCry-Ransomware/5.png)
+
+
+After that there is call to InternetOpenA to initialize WinINet functions.
+
+Immediately after it, there is call to InternetOpenUrlA, where value of ecx is pushed as argument for lpszUrl, which store the kill switch URL. 
+
+From the call to InternetOpenURLA, if the kill switch URL could be reached:
+
+- The return will be a handle, meaning eax will be a non-zero value.
+- Then the eax value is moved to edi.
+- The test edi, edi will perform bitwise AND operation and the result of AND operation between non-zero and non-zero will be a non-zero value, clearing the zero flag (ZF=0).
+- The next instruction jnz will jump if zero flag is not zero/set (ZF=0). Since the ZF=0 in this case, it will take the jump to loc_4081BC.
+- It will close the handle and then exists.
+- This capability of WannaCry could be to evade sandbox environment, which normally simulates the URL that the malware is trying to connect. By trying to reach out to a gibberish non-existence domain, the WannaCry will know if it’s running in sandbox environment. If it connects to the kill switch URL, it will then exit without doing anything.
+
+From the call to InternetOpenURLA, if the kill switch URL could not be reached:
+
+- The return value will be null, meaning eax=0.
+- Then the eax value is moved to edi.
+- The test edi, edi will perform bitwise AND operation and the result of AND operation between 0 and 0 will be 0, setting up the zero flag (ZF=1).
+- The next instruction jnz will jump if zero flag is not zero/set (ZF=0). Since the ZF=1 in this case, it will not take the jump.
+- After that it will close the handle and call sub_408090.
+
+#### Service Mode
+
+Lets now analyze sub_408090.
+
+![Check parameters](/images/2023-11-11-Reversing-WannaCry-Ransomware/6.png)
+
+Under the sub_408090, there is call to GetModuleFileNameA that retrieves the path for the image of current process. 
+
+Then it calls the __p__argc to check the number of parameters which will be returned in eax.
+
+Immediately after the call there is cmp instruction which checks if the number of parameter is 2.
+
+- If true
+    - The instruction jge will jump to loc_4080B9.
+    - Since no parameter is passed until now, lets not jump to that execution flow. We will come to this part later on after some parameters is appended.
+- If false
+    - The instruction jge will jump to loc_4080B9. Since no parameter is passed to this binary, it will not take the jump and call sub_507F20.
+
+Under the sub_507F20, there is call to 2 functions, sub_407C40 and sub_407CE0 as can be seen below.
+
+![Function calls](/images/2023-11-11-Reversing-WannaCry-Ransomware/7.png)
+
+Lets now dive into sub_407C40.
 
 
 ### Second Stager (tasksche.exe)
