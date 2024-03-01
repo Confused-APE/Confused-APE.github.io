@@ -73,7 +73,7 @@ Then sub esp, 50 instruction is allocating space in stack for arguments and valu
 After that there are couple of instructions for preparing rep movsd, which will move double word (32-bits) value from esi to edi till the ecx is 0.
 
 - The esi and ebi are pushed onto the stack to save their value.
-- The value 0xE (14) is moved to ecx as counter.
+- The value 0xE (14) is moved to ecx as a counter.
 - The offset of a kill switch URL somewhere under .data section is moved to esi.
 - With lea instruction, the beginning offset under stack segment where the kill switch URL is to be stored is moved to edi.
 - There is xor eax, eax which will result to eax being 0.
