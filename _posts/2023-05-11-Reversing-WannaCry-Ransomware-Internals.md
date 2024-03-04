@@ -184,7 +184,7 @@ Finally, it call SizeofResource to retrieve size (in byte) of ‘R’ resource.
 ![tasksche.exe](/images/2023-11-11-Reversing-WannaCry-Ransomware/13.png)
 
 
-Following it, there are two calls to sprintf which compose Buffer string as “C:\\WINDOWS\\tasksche.exe” and NewFileName string as “C:\\WINDOWS\\qeriuwjhrf” respectively.
+Following it, as can be seen above, there are two calls to sprintf which compose Buffer string as “C:\\WINDOWS\\tasksche.exe” and NewFileName string as “C:\\WINDOWS\\qeriuwjhrf” respectively.
 
 Then there is call to MoveFileExA, where:
 
