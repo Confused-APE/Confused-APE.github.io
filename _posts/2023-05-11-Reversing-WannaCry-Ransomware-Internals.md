@@ -217,7 +217,7 @@ By calling CreateProcess, the mssecsvc.exe will create child process of tasksche
 
 We will analyze the second stager shortly. But before that lets get back to function sub_408090 , where it checked the number of parameters.
 
-![CreateProcessA](/images/2023-11-11-Reversing-WannaCry-Ransomware/14.png)
+![CreateProcessA](/images/2023-11-11-Reversing-WannaCry-Ransomware/15.png)
 
 Once the service is created and running, it has now parameters added so it will follow different execution flow and jump to loc_4080B9.
 
