@@ -135,6 +135,97 @@ Lets now dive into sub_407C40.
 
 ![Create Service](/images/2023-11-11-Reversing-WannaCry-Ransomware/8.png)
 
+There is first call to sprintf that compose the Buffer string as "C:\mssecsvc.exe -m security".
+
+After that there is call to OpenSCManagerA that establishes connection to service control manager on local computer
+
+There is call to CreateServiceA to create a service, where: 
+
+- The ServiceName passed as argument is ‘mssecsvc2.0’.
+- The DisplayName passed as argument is ‘Microsoft Security Center (2.0) Service’
+- The lpBinaryPathName passed as argument is the ecx.
+    - Some instruction above the memory address of Buffer is passed to ecx with lea instruction.
+    - Note that the Buffer store string as "C:\mssecsvc.exe -m security".
+
+This will now create a service of this binary with ‘-m security’ parameter passed to it.
+
+Then, there is call to StartServiceA, which starts the previously created service named ‘mssecsvc2.0’. This will execute this binary with ‘-m security’ parameter added to it. 
+
+After that it returns backs to sub_407F20 and then calls the next function sub_407CE0.
+
+![Function calls](/images/2023-11-11-Reversing-WannaCry-Ransomware/9.png)
+
+Lets now dive into sub_407CE0.
+
+![sub_407CE0](/images/2023-11-11-Reversing-WannaCry-Ransomware/10.png)
+
+First there is call to GetModuleHandleW which retrieves a module handle of this process.
+
+After that there are lots of call to GetProcAddress through which this sample retrieves the address of an import functions (CreateProcessA, CreateFileA, WriteFile and CloseHandle) so that it can call those functions later on. 
+
+After this, it perform some action with the resource of this binary.
+
+![Resource](/images/2023-11-11-Reversing-WannaCry-Ransomware/11.png)
+
+By calling FindResourceA, it locate the resource named ‘R’.
+
+On checking the sample under Resource Hacker, there was a resource named ‘R’ which stored a PE file (an executable) as can be seen below.
+
+![Resource](/images/2023-11-11-Reversing-WannaCry-Ransomware/12.png)
+
+Then, by calling LoadResource, it retrieve handle to obtain pointer of first byte of ‘R’ resource.
+
+It then call LockResource to retrieve pointer to ‘R’ resource  in memory.
+
+- Also note the return value is moved under [esp+270h+lpBuffer], which could be used later when writing to a file.
+
+Finally, it call SizeofResource to retrieve size (in byte) of ‘R’ resource.
+
+![tasksche.exe](/images/2023-11-11-Reversing-WannaCry-Ransomware/13.png)
+
+
+Following it, there are two calls to sprintf which compose Buffer string as “C:\\WINDOWS\\tasksche.exe” and NewFileName string as “C:\\WINDOWS\\qeriuwjhrf” respectively.
+
+Then there is call to MoveFileExA, where:
+
+- The eax (store Buffer string “C:\WINDOWS\tasksche.exe”)  is passed as lpExisitingFileName
+- The edx (store NewFileName string “C:\WINDOWS\qeriuwjhrf”) is passed as lpNewFileName
+- The dwFlags value 1 meaning MOVEFILE_REPLACE_EXISTING.
+
+Since C:\WINDOWS\tasksche.exe does not exist currently, it will not move the file.
+
+After this there is call to CreateFileA, with ecx (store Buffer string “C:\WINDOWS\tasksche.exe”) passed as lpFileName. This will create tasksche.exe under C:\WINDOWS folder. But the contents is not written yet.
+
+The return value (eax) from CreateFileA, which stores the handle to the file is moved to esi. 
+
+Then there is call to WriteFile where:
+
+- The eax (store pointer to resource named ‘R’ in memory [esp+270h+lpBuffer], previously after call to LockResource) is passed as lpBuffer.
+
+Using the handle of the file stored under esi, it writes the contents of ‘R’ resource from memory to tasksche.exe under C:\WINDOWS folder. This tasksche.exe binary is the next stager.
+
+After that the process Information is first initialized as can be seen below.
+
+![CreateProcessA](/images/2023-11-11-Reversing-WannaCry-Ransomware/14.png)
+
+Then, there is call to CreateProcessA where:
+
+- The edx (store Buffer string “C:\WINDOWS\tasksche.exe”) is passed as lpCommandLine
+- The value 0x8000000 ( CREATE_NO_WINDOW) is passed as dwCreationFlags for no console window.
+
+By calling CreateProcess, the mssecsvc.exe will create child process of tasksche.exe, which is the second stager.
+
+We will analyze the second stager shortly. But before that lets get back to function sub_408090 , where it checked the number of parameters.
+
+![CreateProcessA](/images/2023-11-11-Reversing-WannaCry-Ransomware/14.png)
+
+Once the service is created and running, it has now parameters added so it will follow different execution flow and jump to loc_4080B9.
+
+#### Worm 
+
+After jumping to loc_4080B9,
+
+
 
 ### Second Stager (tasksche.exe)
 
