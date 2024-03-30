@@ -17,8 +17,8 @@ Malware leverage encryption algorithm for anti-defense and anti-analysis. There 
 
 In case of samples using API for encryption, it can be easily identified because Microsoft has documented most of those APIs.
 
-- [Wincrypt.h header — Win32 apps | Microsoft Learn](https://learn.microsoft.com/en-us/windows/win32/api/wincrypt/)
-- [BCryptEncrypt function (bcrypt.h) — Win32 apps | Microsoft Learn](https://learn.microsoft.com/en-us/windows/win32/api/bcrypt/nf-bcrypt-bcryptencrypt)
+- ![Wincrypt.h header — Win32 apps | Microsoft Learn](https://learn.microsoft.com/en-us/windows/win32/api/wincrypt/)
+- ![BCryptEncrypt function (bcrypt.h) — Win32 apps | Microsoft Learn](https://learn.microsoft.com/en-us/windows/win32/api/bcrypt/nf-bcrypt-bcryptencrypt)
 
 **Example**
 
@@ -59,6 +59,7 @@ So, this blog series will focus on identifying encryption algorithms. Following 
     - Blowfish
     - Serpent
     - 3DES
+
 **Asymmetric Encryption Algorithm**
 - RSA
 - ECDH
