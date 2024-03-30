@@ -22,6 +22,8 @@ In case of samples using API for encryption, it can be easily identified because
 [Wincrypt.h header — Win32 apps](https://learn.microsoft.com/en-us/windows/win32/api/wincrypt/)
 [BCryptEncrypt function (bcrypt.h) — Win32 apps](https://learn.microsoft.com/en-us/windows/win32/api/bcrypt/nf-bcrypt-bcryptencrypt)
 
+<br>
+
 **Example**
 
 Consider a sample that has functionality to decrypt obfuscated strings during run time. And for this, it uses **CryptGenKey** API from **WinCrypt** to generate cryptographic key, which handle will be passed to **CryptDecrypt** to decrypt those obfuscated strings
