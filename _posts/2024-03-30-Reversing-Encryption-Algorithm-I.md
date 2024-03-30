@@ -1,6 +1,6 @@
 ---
 layout:	post
-title:  "Reversing Encryption Algorithms (I): Intro"
+title:  "Reversing Encryption Algorithms (I): Introduction"
 date:   2024-03-30 11:11:11 +0200
 categories: [Reversing Encryption Algorithms]
 tags: [Encryption]
