@@ -15,6 +15,8 @@ Malware leverage encryption algorithm for anti-defense and anti-analysis. There 
 - Using APIs
 - Coding encryption algorithms
 
+## API
+
 In case of samples using API for encryption, it can be easily identified because Microsoft has documented most of those APIs.
 
 ![Wincrypt.h header — Win32 apps](https://learn.microsoft.com/en-us/windows/win32/api/wincrypt/)
@@ -34,6 +36,8 @@ By checking the [value of Algorithm ID](https://learn.microsoft.com/en-us/window
 
 <br>
 
+## Constants
+
 The usage of API made it easier to detect. But what if malware author do not use API for cryptographic algorithm?
 
 One way is by through the **constants** used in cryptographic algorithm.
@@ -42,6 +46,8 @@ One way is by through the **constants** used in cryptographic algorithm.
 - Tools like KANAL and CAPA can detect encryption algorithm through constants.
 
 <br>
+
+## Algorithm Flow
 
 Again what if those tools did not pickup those constants of encryption algorithm? 
 - In such cases, malware analyst needs to understand the **flow** of cryptographic algorithm in order to identify them. 
