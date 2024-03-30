@@ -1,7 +1,7 @@
 ---
 layout:	post
 title:  "Reversing Encryption Algorithms (I): Introduction"
-date:   2024-03-30 11:11:11 +0200
+date:   2024-03-29 11:11:11 +0200
 categories: [Reversing Encryption Algorithms]
 tags: [Encryption]
 ---
@@ -26,11 +26,11 @@ Consider a sample that has functionality to decrypt obfuscated strings during ru
 
 Following the [Microsoft documentation on **CryptGenKey**](https://learn.microsoft.com/en-us/windows/win32/api/wincrypt/nf-wincrypt-cryptdecrypt) as shown below, the second parameter it takes is Algorithm ID
 
-![CryptDecrypt](/images/2024-03-30-Reversing-Encryption-Algorithm-I/CryptDecrypt.png)
+![CryptDecrypt](/images/2024-03-29-Reversing-Encryption-Algorithm-I/CryptDecrypt.png)
 
 By checking the [value of Algorithm ID](https://learn.microsoft.com/en-us/windows/win32/seccrypto/alg-id) that is passed as second parameter to the CryptGenKey API, the encryption algorithm can be identified easily.
 
-![AlgorithmID](/images/2024-03-30-Reversing-Encryption-Algorithm-I/AlgorithmID.png)
+![AlgorithmID](/images/2024-03-29-Reversing-Encryption-Algorithm-I/AlgorithmID.png)
 
 <br>
 
