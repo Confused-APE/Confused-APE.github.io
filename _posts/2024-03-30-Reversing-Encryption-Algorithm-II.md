@@ -15,6 +15,8 @@ RC4 is symmetric stream cipher developed by Ronald Rivest in 1987. It is one of 
 
 RC4 was popular with malwares like Raccoon Stealer v2, Revil, IceID, Dridex, and more.
 
+<br>
+
 ## Implementation in C
 
     #include <stdio.h>
@@ -76,6 +78,7 @@ RC4 was popular with malwares like Raccoon Stealer v2, Revil, IceID, Dridex, and
         return 0;
     }
 
+<br>
 
 ## Algorithm Breakdown
 
@@ -121,10 +124,12 @@ RC4 algorithm consist of 3 stages (code for each stage from above implementation
     
     ```
 
+<br>
+
 ## Reversing
 
 
-
+<br>
 
 ## Case Study: Raccoon Stealer v2
 
