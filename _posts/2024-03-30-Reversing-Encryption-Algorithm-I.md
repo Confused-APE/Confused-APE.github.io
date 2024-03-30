@@ -32,6 +32,8 @@ By checking the [value of Algorithm ID](https://learn.microsoft.com/en-us/window
 
 ![AlgorithmID](/images/2024-03-30-Reversing-Encryption-Algorithm-I/AlgorithmID.png)
 
+<br>
+
 The usage of API made it easier to detect. But what if malware author do not use API for cryptographic algorithm?
 
 One way is by through the **constants** used in cryptographic algorithm.
@@ -39,8 +41,12 @@ One way is by through the **constants** used in cryptographic algorithm.
     - Those constant can be substitution box, magic numbers or certain value used in algorithm.
 - Tools like KANAL and CAPA can detect encryption algorithm through constants.
 
+<br>
+
 Again what if those tools did not pickup those constants of encryption algorithm? 
 - In such cases, malware analyst needs to understand the **flow** of cryptographic algorithm in order to identify them. 
+
+<br>
 
 So, this blog series will focus on identifying encryption algorithms. Following encryption algorithms will be covered.
 
