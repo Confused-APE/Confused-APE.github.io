@@ -19,7 +19,7 @@ RC4 was popular with malwares like Raccoon Stealer v2, Revil, IceID, Dridex, and
 
 ## Implementation in C
 
-```C
+```c
     #include <stdio.h>
     #include <stdlib.h>
     
@@ -91,7 +91,7 @@ RC4 algorithm consist of 3 stages (code for each stage from above implementation
     -   In this phase, a 256-byte array substitution box is first initialized.
     -   Then, using the key, the initialized substitution box is scrambled.
     
-    ```C
+    ```c
     for (i = 0; i < 256; i++) {
         SBox[i] = i;  //Initializing 256-byte array substitution box
     }
@@ -106,7 +106,7 @@ RC4 algorithm consist of 3 stages (code for each stage from above implementation
     
     -   In this phase, the scrambled substitution box created in KSA stage is used to generate keystream.
     
-    ```C
+    ```c
     for (int l = 0; l < len; l++) {
         i = (i + 1) % 256;
         j = (j + SBox[i]) % 256;
@@ -121,7 +121,7 @@ RC4 algorithm consist of 3 stages (code for each stage from above implementation
     
     -   In this phase, each byte of plaintext/ciphertext is XOR with each byte of key stream generated in previous PRGA stage to get ciphertext/plaintext respectively.
     
-    ```C
+    ```c
     ciphertext[l] = plaintext[l] ^ k; // XOR operation
     
     ```
