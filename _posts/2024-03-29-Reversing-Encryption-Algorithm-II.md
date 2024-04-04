@@ -40,7 +40,7 @@ RC4 was popular with malwares like Raccoon Stealer v2, Revil, IceID, Dridex, and
     
         for (i = 0; i < 256; i++) {
             j = (j + SBox[i] + key[i % len]) % 256;  //Scrambling initialized substitution box with key
-            swap(&SBox[i], &SBox[j]); #Swap SBox[i] and SBox[j]
+            swap(&SBox[i], &SBox[j]); //Swap SBox[i] and SBox[j]
         }
     
         // Pseudo-random generation algorithm
@@ -48,7 +48,7 @@ RC4 was popular with malwares like Raccoon Stealer v2, Revil, IceID, Dridex, and
         for (int l = 0; l < len; l++) {
             i = (i + 1) % 256;
             j = (j + SBox[i]) % 256;
-            swap(&SBox[i], &SBox[j]);  //#Swap SBox[i] and SBox[j]
+            swap(&SBox[i], &SBox[j]);  //Swap SBox[i] and SBox[j]
             k = SBox[(SBox[i] + SBox[j]) % 256]; //Generating key stream
             ciphertext[l] = plaintext[l] ^ k; // XOR operation
         }
@@ -97,7 +97,7 @@ RC4 algorithm consist of 3 stages (code for each stage from above implementation
     }
     for (i = 0; i < 256; i++) {
         j = (j + SBox[i] + key[i % len]) % 256;  //Scrambling initialized substitution box with key
-        swap(&SBox[i], &SBox[j]);  //#Swap SBox[i] and SBox[j]             
+        swap(&SBox[i], &SBox[j]);  //Swap SBox[i] and SBox[j]             
     }
     
     ```
@@ -110,7 +110,7 @@ RC4 algorithm consist of 3 stages (code for each stage from above implementation
     for (int l = 0; l < len; l++) {
         i = (i + 1) % 256;
         j = (j + SBox[i]) % 256;
-        swap(&SBox[i], &SBox[j]);  //#Swap SBox[i] and SBox[j]
+        swap(&SBox[i], &SBox[j]);  //Swap SBox[i] and SBox[j]
         k = SBox[(SBox[i] + SBox[j]) % 256]; //Generating key stream
         ciphertext[l] = plaintext[l] ^ k; // XOR operation
     }
