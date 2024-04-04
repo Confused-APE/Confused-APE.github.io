@@ -132,7 +132,7 @@ The above RC4 implementation C code when disassembled in IDA can be seen below.
 
 ![rc4_encrypt](/images/2024-03-29-Reversing-Encryption-Algorithm-II/rc4_encrypt.png)
 
-This is just an overview. The next section will dive deeply into reversing RC4 implemented in Raccoon Stealer v2.
+This is just an overview. The next section will dive deeply into reversing RC4 algorithm implemented in Raccoon Stealer v2.
 
 <br>
 
@@ -140,6 +140,9 @@ This is just an overview. The next section will dive deeply into reversing RC4 i
 
 ### Reversing RC4 Algorithm
 
+
+
+<br>
 
 ### Config Extractor
 
@@ -289,6 +292,7 @@ This is just an overview. The next section will dive deeply into reversing RC4 i
     KxRJtgcqyMC4  :  ","guid":
     WUoEtxsvyZE=  :  Profiles
 
+<br>
 
 ## YARA Rule
 
