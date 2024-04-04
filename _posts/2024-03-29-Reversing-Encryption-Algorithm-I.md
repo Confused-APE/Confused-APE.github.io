@@ -15,6 +15,8 @@ Malware leverage encryption algorithm for anti-defense and anti-analysis. There 
 - Using APIs
 - Coding encryption algorithms
 
+<br>
+
 ## Using API
 
 In case of samples using API for encryption, it can be easily identified because Microsoft has documented most of those APIs.
