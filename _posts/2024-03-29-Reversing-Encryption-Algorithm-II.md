@@ -146,6 +146,7 @@ This is just an overview. The next section will dive deeply into reversing RC4 a
 
 ### Config Extractor
 
+```python
     from pefile import PE
     from base64 import b64decode
     from arc4 import ARC4
@@ -179,7 +180,7 @@ This is just an overview. The next section will dive deeply into reversing RC4 a
     
     if __name__ == "__main__":
         main()
-
+```
 
 **Output:**
 
