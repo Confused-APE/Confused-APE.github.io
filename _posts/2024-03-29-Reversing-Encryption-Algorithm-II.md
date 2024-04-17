@@ -86,7 +86,7 @@ RC4 was popular with malwares like Raccoon Stealer v2, Revil, IceID, Dridex, and
 
 RC4 algorithm consist of 3 stages (code for each stage from above implementation):
 
-1.  **KSA (Key Scheduling Algorithm)**
+**KSA (Key Scheduling Algorithm)**
    
     -   In this phase, a 256-byte array substitution box is first initialized.
     -   Then, using the key, the initialized substitution box is scrambled.
@@ -102,7 +102,7 @@ RC4 algorithm consist of 3 stages (code for each stage from above implementation
     
     ```
     
-2.  **PRGA (Pseudo Random Generation Algorithm)** and **XOR**
+**PRGA (Pseudo Random Generation Algorithm)** and **XOR**
     
     -   In PRGA phase, the scrambled substitution box created in KSA stage is used to generate keystream. Then, in XOR phase, each byte of plaintext/ciphertext is XOR with each byte of key stream generated in previous PRGA stage to get ciphertext/plaintext respectively.
     
