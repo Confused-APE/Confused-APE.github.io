@@ -91,7 +91,7 @@ RC4 algorithm consist of 3 stages (code for each stage from above implementation
 -   In this phase, a 256-byte array substitution box is first initialized.
 -   Then, using the key, the initialized substitution box is scrambled.
 
-    ```c
+```c  
     for (i = 0; i < 256; i++) {
         SBox[i] = i;  //Initializing 256-byte array substitution box
     }
@@ -99,24 +99,24 @@ RC4 algorithm consist of 3 stages (code for each stage from above implementation
         j = (j + SBox[i] + key[i % len]) % 256;  //Scrambling initialized substitution box with key
         swap(&SBox[i], &SBox[j]);  //Swap SBox[i] and SBox[j]             
     }
-    
-    ```
+
+```
     
 **PRGA (Pseudo Random Generation Algorithm)** and **XOR**
     
   -   In PRGA phase, the scrambled substitution box created in KSA stage is used to generate keystream.
   -   Then, in XOR phase, each byte of plaintext/ciphertext is XOR with each byte of key stream generated in previous PRGA stage to get ciphertext/plaintext respectively.
-    
-    ```c
-    for (int l = 0; l < len; l++) {
+
+```c
+      for (int l = 0; l < len; l++) {
         i = (i + 1) % 256;
         j = (j + SBox[i]) % 256;
         swap(&SBox[i], &SBox[j]);  //Swap SBox[i] and SBox[j]
         k = SBox[(SBox[i] + SBox[j]) % 256]; //Generating key stream
         ciphertext[l] = plaintext[l] ^ k; // XOR operation
     }
-    
-    ```
+
+```
 
 <br>
 
