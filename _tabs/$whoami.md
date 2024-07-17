@@ -6,7 +6,10 @@ order: 4
 
 ## Venus Chhantel
 
-A continuous learner and researcher committed to staying ahead of evolving threats. Representing a T-shaped skill set, my knowledge spans various cybersecurity domains, but I bring expertise in reversing and analyzing malware.
+I am a continuous learner and researcher committed to staying ahead of evolving threats. Representing a T-shaped skill set, my knowledge spans various cybersecurity domains, but I bring expertise in reversing and analyzing malwares.
+
+I simply like to keep learning new things. On this website, I publish my research and learnings through blogs to both consolidate my own understanding as well as to potentially assist others to avoid and overcome some challenges that I faced during my learnings. 
+
 
 ## Work Experiences
 
