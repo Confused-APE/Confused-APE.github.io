@@ -7,23 +7,34 @@ tags: [Active Directory]
 ---
 
 ***Objects*** are any resource in the network. 
+
 ***Directory*** is a herirachy structure that store information about the objects on network. 
+
 ***Directory service*** is responsible for storing and providing those information across the network. 
 
 Microsoft have created a set of such directory services for domain-based network which is known as ***Active Directory*** (AD). 
+
 One of the most popular directory service of AD is ***Active Directory Domain Service*** (AD DS). 
+
 The server running the AD DS is known as ***Domain Controller*** (DC). 
+
 The first DC server that gets promoted to AD DS becomes forest by default.
 
 ![AD Environment](/images/2024-07-15-AD:Fundamentals/1.png)
+
+<br>
 
 ***Forest*** is security boundary and is group of trees that do not share common namespace.
 
 - Security boundary because all domains within the same forest have by default two-way transitive trust; meaning If domain A trusts domain B and domain B trusts domain C, domain A will automatically trust domain C (covered later).
 
 **Tree** is hierarchical (parent-child) structure of domains that share common namespace. 
+
 ***Domain*** is logical group of objects which may contain multiple Organizational Unit (OU) and share an AD database.
+
 ***OU*** is container that store similar objects.
+
+<br>
 
 Special roles are assigned to DCs in AD environment known as ***Flexible Single Master Operator*** (FSMO) Roles:
 
@@ -34,6 +45,8 @@ Special roles are assigned to DCs in AD environment known as ***Flexible Single 
 - Infrastructure
 
 ![FSMO](/images/2024-07-15-AD:Fundamentals/2.png)
+
+<br>
 
 **Schema Master**
 
@@ -52,6 +65,7 @@ Special roles are assigned to DCs in AD environment known as ***Flexible Single 
     - One DC with Domain Naming Master role per each forest.
 - Domain Naming Master manages domain names ensuring unique domain name, to avoid collision of same domain names.
 
+
 **RID (Relative Identifier) Master**
 
 - RID Master is domain-based role
@@ -59,7 +73,11 @@ Special roles are assigned to DCs in AD environment known as ***Flexible Single 
 - RID Master is responsible for assinging unique identifier to objects.
 - When any objects are created, they recieve same Domain SID. This results to all objects having the same Domain SID.
     - So, to the Domain SID, RID is appended to created unique SID.
+
+    ![Domain SID](/images/2024-07-15-AD:Fundamentals/3.png)
+
 - For each domain 500 RIDs pool are assigned and if 50% RIDs pool are used up, they will be assigned additional 500 RIDs pool. 
+
 
 **PDU (Primary Domain Controller) Emulator Master** 
 
@@ -87,17 +105,23 @@ Special roles are assigned to DCs in AD environment known as ***Flexible Single 
     - ***Global Catalog (GC)*** is distributed data store that contain partial replica of every objects in entire forest. GC provides searchable catalog of all objects in multi-domain forest.
 - Infrastructure Master role is not given to DC that has GC enabled because it will stop updating object information. Because of this, the cross-domain object references in that domain will not be updated.
 
+<br>
+
 By default there will be following important privileged groups, when a server is promoted to a DC:
 
 - **Enterprise Admin** - Forest-based that can make changes to any domain under that forest.
 - **Schema Admin** - Forest-based that can make changes to schema.
 - **Domain Admin** - Domain-based that can make changes only to that particular domain.
 
+<br>
+
 In AD, domain (non-admin) users can be granted fairly granular level permission to perform some AD management task without adding them to privileged domain group which is known as ***delegation***. 
 
 - Example: Delegate Helpdesk to grant permissions to add users to groups, create new users in AD, and reset the account passwords.
 
 It is recommendated to delegate controls to group and add users to that group, not directly delegate users.
+
+<br>
 
 ***Service Accounts*** are accounts used to provide security contex for services, which determines the service ability to access local and network resources. 
 
@@ -112,16 +136,24 @@ MSA only run on a single server so also known as ***standalone Managed Service A
 
 MSA functionality was extended over multiple servers, which is known as ***Group Managed Service Accounts*** (gMSA).
 
+<br>
+
 ***Kerberos*** is the default authentication protocol in AD (will be covered in detail in next blog)
+
+<br>
 
 Also, by default, 
 
 - The database and logs are stored under `C:\Windows\NTDS` .
 - The SYSVOL is stored under `C:\Windows\SYSVOL`.
 
+<br>
+
 Under the NTDS folder, there are NTDS.DIT (database file) and other log files which are shown below.
 
 ![NTDS and logs](/images/2024-07-15-AD:Fundamentals/4.png)
+
+<br>
 
 The NTDS.DIT database has following partitions.
 
@@ -136,7 +168,9 @@ The NTDS.DIT database has following partitions.
 - ***Application partition*** stores information about applications in AD such as AD-Integrated DNS zones.
     - This partition can be setup to replicate forest-wide or domain-wide.
 
-To enable centralized configuration and management of computers and users setting, there is a feature called G***roup Policy***. 
+<br>
+
+To enable centralized configuration and management of computers and users setting, there is a feature called ***Group Policy***. 
 
 Virtual collection of Group Policy setting is ***Group Policy Object*** (GPO). 
 
@@ -144,12 +178,17 @@ Group Policy settings are created and edited using Group Policy Object Editor.
 
 In AD environment, the availability of resource sharing is goverened by trust. ***Trust*** is secure authenticated communication bridge between domain/forest.
 
+<br>
+
 Additionally trust can be categorized as following:   
 
 - Based on direction
     - One-way
         - Provide access from trusted domain to trusting domain.
         - Trust direction will be opposite to access direction.
+
+        ![One-way Trust](/images/2024-07-15-AD:Fundamentals/6.png)
+
     - Two-way
         - Provide access to both trusting partner domain.
         - Both access and trust direction is bi-directional.
@@ -158,6 +197,8 @@ Additionally trust can be categorized as following:
         - Trust extends beyond domain any other domain that trusting partner domain trusts.
     - Non-transitive
         - Trust exist only between two trusting partner domain
+
+<br>
 
 When trust is created, SID filtering is enabled by default. ***SID filtering*** is a security mechanism that filter out any SID from user’s Acces Token that are not part of trusted domain to ensure only SID from trusted domain are used while accessing a resource over a trust.
 
