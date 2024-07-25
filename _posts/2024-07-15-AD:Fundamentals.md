@@ -59,9 +59,6 @@ Special roles are assigned to DCs in AD environment known as ***Flexible Single 
 - RID Master is responsible for assinging unique identifier to objects.
 - When any objects are created, they recieve same Domain SID. This results to all objects having the same Domain SID.
     - So, to the Domain SID, RID is appended to created unique SID.
-
-    ![Domain SID](/images/2024-07-15-AD:Fundamentals/3.png)
-
 - For each domain 500 RIDs pool are assigned and if 50% RIDs pool are used up, they will be assigned additional 500 RIDs pool. 
 
 **PDU (Primary Domain Controller) Emulator Master** 
@@ -153,9 +150,6 @@ Additionally trust can be categorized as following:
     - One-way
         - Provide access from trusted domain to trusting domain.
         - Trust direction will be opposite to access direction.
-    
-    ![NTDS partitions](/images/2024-07-15-AD:Fundamentals/6.png)
-
     - Two-way
         - Provide access to both trusting partner domain.
         - Both access and trust direction is bi-directional.
