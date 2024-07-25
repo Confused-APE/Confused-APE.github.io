@@ -48,7 +48,7 @@ Special roles are assigned to DCs in AD environment known as ***Flexible Single 
 
 <br>
 
-**Schema Master**
+**(1) Schema Master**
 
 - Schema Master is forest-based role.
     - One DC with Schema Master role per each forest.
@@ -58,15 +58,17 @@ Special roles are assigned to DCs in AD environment known as ***Flexible Single 
         - Example: user object attributes are firstName, lastName, employeeId, employeeType, etc.
 - Only DC with Schema Master role can make modification to schema. So, any modification made to the schema go via DC with Schema Master role, which is then replicated to schema of all other DC in the AD network.
 
+<br>
 
-**Domain Naming Master**
+**(2) Domain Naming Master**
 
 - Domain Naming Master is also forest-based role.
     - One DC with Domain Naming Master role per each forest.
 - Domain Naming Master manages domain names ensuring unique domain name, to avoid collision of same domain names.
 
+<br>
 
-**RID (Relative Identifier) Master**
+**(3) RID (Relative Identifier) Master**
 
 - RID Master is domain-based role
     - One DC with RID Master role per each domain.
@@ -78,8 +80,9 @@ Special roles are assigned to DCs in AD environment known as ***Flexible Single 
 
 - For each domain 500 RIDs pool are assigned and if 50% RIDs pool are used up, they will be assigned additional 500 RIDs pool. 
 
+<br>
 
-**PDU (Primary Domain Controller) Emulator Master** 
+**(4) PDU (Primary Domain Controller) Emulator Master** 
 
 - PDC Emulator Master is domain-based role.
     - One DC with PDU role per each domain.
@@ -89,7 +92,9 @@ Special roles are assigned to DCs in AD environment known as ***Flexible Single 
     - Since all failed authentication requests from other DC as sent to the DC with this role, it is also responsible for account lookouts. Account lockouts are urgently replicated across the DC.
     - DC with this role is also responsible for synchronizing time, which is critically important for various processes, including Kerberos authentication.
 
-**Infrastructure Master**
+<br>
+
+**(5) Infrastructure Master**
 
 - Infrastructure Master is domain-based role.
     - One DC with Infrastructure Master role per each domain.
