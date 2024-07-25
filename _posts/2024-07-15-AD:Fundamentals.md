@@ -24,7 +24,7 @@ The first DC server that gets promoted to AD DS becomes forest by default.
 
 <br>
 
-***Forest*** is security boundary and is group of trees that do not share common namespace.
+***Forest*** is security boundary and is group of trees.
 
 - Security boundary because all domains within the same forest have by default two-way transitive trust; meaning If domain A trusts domain B and domain B trusts domain C, domain A will automatically trust domain C (covered later).
 
