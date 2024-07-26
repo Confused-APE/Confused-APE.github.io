@@ -110,4 +110,5 @@ With this the kerberos authentication is complete, and user can access the servi
 ## References:
 
 https://www.youtube.com/watch?v=5N242XcKAsM&t=867s
+
 https://www.hackthebox.com/blog/what-is-kerberos-authentication
