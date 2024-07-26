@@ -181,9 +181,9 @@ Virtual collection of Group Policy setting is ***Group Policy Object*** (GPO).
 
 Group Policy settings are created and edited using Group Policy Object Editor.  
 
-In AD environment, the availability of resource sharing is goverened by trust. ***Trust*** is secure authenticated communication bridge between domain/forest.
-
 <br>
+
+In AD environment, the availability of resource sharing is goverened by trust. ***Trust*** is secure authenticated communication bridge between domain/forest.
 
 Additionally trust can be categorized as following:   
 
