@@ -106,3 +106,8 @@ With this the kerberos authentication is complete, and user can access the servi
 
 ![in-short](/images/2024-07-16-AD_Kerberos_Authentication/7.png)
 
+
+## References:
+
+https://www.youtube.com/watch?v=5N242XcKAsM&t=867s
+https://www.hackthebox.com/blog/what-is-kerberos-authentication
