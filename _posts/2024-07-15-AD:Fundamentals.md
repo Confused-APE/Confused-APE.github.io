@@ -42,7 +42,7 @@ Special roles are assigned to DCs in AD environment known as ***Flexible Single 
 - Domain Naming Master
 - RID Master
 - PDC Emulator Master
-- Infrastructure
+- Infrastructure Master
 
 ![FSMO](/images/2024-07-15-AD:Fundamentals/2.png)
 
