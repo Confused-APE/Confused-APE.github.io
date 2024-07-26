@@ -1,3 +1,4 @@
+---
 layout:	post
 title:  "AD: Kerberos Authentication"
 date:   2024-07-16 11:11:11 +0200
