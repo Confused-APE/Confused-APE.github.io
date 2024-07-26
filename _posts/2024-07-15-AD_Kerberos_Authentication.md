@@ -109,6 +109,6 @@ With this the kerberos authentication is complete, and user can access the servi
 
 ## References:
 
-[Kerberos Authentication Explained | A deep dive - YouTube](https://www.youtube.com/watch?v=5N242XcKAsM&t=867s)
-
 [Kerberos authentication: A simple (& visual) guide for security pros (hackthebox.com)](https://www.hackthebox.com/blog/what-is-kerberos-authentication)
+
+[Kerberos Authentication Explained | A deep dive - YouTube](https://www.youtube.com/watch?v=5N242XcKAsM&t=867s)
