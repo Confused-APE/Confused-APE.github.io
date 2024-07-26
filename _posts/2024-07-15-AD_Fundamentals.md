@@ -82,7 +82,7 @@ Special roles are assigned to DCs in AD environment known as ***Flexible Single 
 
 <br>
 
-**(4) PDU (Primary Domain Controller) Emulator Master** 
+**(4) PDC (Primary Domain Controller) Emulator Master** 
 
 - PDC Emulator Master is domain-based role.
     - One DC with PDU role per each domain.
