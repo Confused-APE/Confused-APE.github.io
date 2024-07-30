@@ -22,7 +22,7 @@ Kerberos comes from Cerebrus (a three headed dog), where each head represent cor
 
 ## Kerberos Authentication: In-Depth
 
-**Step 1:** User that want to authenticate first sends an unecrypted message to the AS as can be seen below. This is when pre-authentication is not enabled, which is by default. If pre-authentication is enabled, the user will send message to AS encrypted with user's secret. The later one is important for security reasons.
+**Step 1:** User that want to authenticate first sends an unecrypted message to the AS as can be seen below. This is when pre-authentication is disabled. If pre-authentication is enabled, the user will send message to AS encrypted with user's secret. The later one is important for security reasons.
 
 ![Step 1](/images/2024-07-16-AD_Kerberos_Authentication/1.png)
 
