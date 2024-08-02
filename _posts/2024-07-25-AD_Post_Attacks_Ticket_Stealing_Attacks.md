@@ -71,7 +71,7 @@ title: AS-REP Roasting Attempt Detected
 status: experimental
 description: Detects AS-REP Roasting
 references:
-    - 
+    - https://venuschhantel.com.np/posts/AD_Post_Attacks_Ticket_Stealing_Attacks/
 author: Venus Chhantel
 date: 2024/07/25
 tags:
@@ -140,7 +140,7 @@ title: Detect Kerberoasting
 status: experimental
 description: Detects Kerberoasting
 references:
-    - 
+    - https://venuschhantel.com.np/posts/AD_Post_Attacks_Ticket_Stealing_Attacks/
 author: Venus Chhantel
 date: 2024/07/25
 tags:
