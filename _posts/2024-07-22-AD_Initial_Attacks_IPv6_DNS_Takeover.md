@@ -38,6 +38,8 @@ sudo mitm6 -d APEWITHINTERNET.local
 
 Now, when any event occur on the network like machine startup/reboot or user logins, they will be intercepted and relayed to DC.
 
+<br>
+
 When PC1 startup/reboot, the PC will try to authenticate to spoofed ‘hecker’ machine which will be relayed to DC.  
 
 ```bash
@@ -84,6 +86,8 @@ Additionally, it uses ldapdomaindump to dump out various object information like
 -rw-rw-r-- 1 kali kali  8223 Jul 21 14:28 domain_users.html
 -rw-rw-r-- 1 kali kali 18589 Jul 21 14:28 domain_users.json
 ```
+
+<br>
 
 Also, when user try to login, they will try to authenticate to spoofed ‘hecker’ machine which will be relayed to DC. 
 
