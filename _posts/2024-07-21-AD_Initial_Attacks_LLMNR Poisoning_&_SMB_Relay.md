@@ -99,7 +99,7 @@ If the username and  NTLMv2 hash is retrieved via LLMNR poisoning, then it can b
 
 <br>
 
-## SMB Relay Walkthrough
+### SMB Relay Walkthrough
 
 As mentioned above, the target machines should have SMB disabled or not required to perform SMB relay. Using Nmap, the target network 192.168.190.0/24 was scanned with an NSE script to identify potential targets.
 
