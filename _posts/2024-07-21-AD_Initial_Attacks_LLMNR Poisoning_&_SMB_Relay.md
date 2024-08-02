@@ -1,7 +1,7 @@
 ---
 layout:	post
 title:  "AD Initial-Attacks: LLMNR Poisoning & SMB Relay"
-date:   2024-07-16 11:11:11 +0200
+date:   2024-07-21 11:11:11 +0200
 categories: [Active Directory]
 tags: [Active Directory]
 ---
