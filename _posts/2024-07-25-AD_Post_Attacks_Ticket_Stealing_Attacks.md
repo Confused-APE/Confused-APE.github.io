@@ -16,7 +16,7 @@ tags: [Active Directory]
 
 ## AD Environment
 
-The AD environment for the ticket-stealing attacks (AS-REP roasting & Kerberoasting)walkthrough is illustrated in the image below.
+The AD environment for the ticket-stealing attacks (AS-REP roasting & Kerberoasting) walkthrough is illustrated in the image below.
 
 ![AD Environment](/images/2024-07-25-AD_Post_Attacks_Ticket_Stealing_Attacks/1.png)
 
