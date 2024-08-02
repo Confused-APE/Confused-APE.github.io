@@ -63,7 +63,7 @@ The TGS then validates the data in those messages:
 - Validates the IP address from TGT with the IP address it recieved the messages from.
 - Validates if TGT is not expired.
 
-If the validation is successful, TGS create two message and send back to User.
+If the validation is successful, TGS create two message and send back to User. Once message is Service Ticket which is encrypted with service secret which is derived from service account password associated with a SPN.
 
 ![Step 4](/images/2024-07-16-AD_Kerberos_Authentication/4.png)
 
